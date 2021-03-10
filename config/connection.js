@@ -1,13 +1,15 @@
 var mongoClient =require('mongodb').MongoClient
+require('dotenv').config();
 const state={
     db:null
 }
 
 module.exports.connect=function(done){
-    const url = 'mongodb://localhost:27017'
+    // const url = 'mongodb+srv://bibin:HHaroRxIYKfbECZZ@cluster0.dpvpy.mongodb.net/shopping?retryWrites=true&w=majority'
+    const url=process.env.MONGO_URL
     const dbname ='shopping'
 
-    mongoClient.connect(url, function(err, data) {
+    mongoClient.connect(url,{useNewUrlParser:true} ,function(err, data) {
         if(err) {
           return done(err)
         }else{
