@@ -6,6 +6,7 @@ const state={
 
 module.exports.connect=function(done){
     // const url = 'mongodb+srv://bibin:HHaroRxIYKfbECZZ@cluster0.dpvpy.mongodb.net/shopping?retryWrites=true&w=majority'
+    // new change
     const url=process.env.MONGO_URL
     const dbname ='shopping'
 
